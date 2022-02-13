@@ -1,0 +1,44 @@
+/*
+Stylesheet name: blue.css
+Theme URI: https://themeies.com
+Author URI: https://themeies.com/
+ */
+ .logo span, .banner .banner-content h2 span, .navbar-nav li a li.current-menu-item a, .navbar-nav li a:hover,
+ .iconBox i,.read-more:hover, .tagline, .testimonial span.quote-sign, .footer .copyright a, .footer .copyright i,
+ .course-meta a, .page-feature .breadcrumb a, .course-content h3 a:hover, .course-content .details span a, .ratings a, 
+ .comments .comments-body a, .post-item .post-content h3 a:hover, .recent-courses li a:hover h5, .recent-posts li a:hover h5, .recent-courses li a p, .recent-posts li a p,
+ .meta-tags a:hover, .meta-tags span:hover, .pagination a:hover, .pagination span:hover, .sl-form .notice a, .widget-navigation li a:hover, .process li h5 a:hover
+ 
+ {
+     color: #ef3e0f;
+ }
+ .iconBox:hover i{
+     color: #ef3e0f;   
+ }
+ .read-more:hover, .pagination .current-page, .pagination a:hover, .pagination span:hover{
+     border-color: #ef3e0f;
+ }
+
+ .btn-default:hover, .btn-default, .logo span, .ribbon, .course-thumb .meta-area ul li a i,.process li:hover .icon-bg,
+ .btn-filled, .foo-top ul.social-media li a i, a#compare, .pagination .current-page, .yacht-preview .yacht-slider .owl-nav button, .sidebar .widget ul.social-media.nav.nav-tabs li a i,
+ .course-curriculum .nav a.active
+ {
+    background-image: linear-gradient(to right, #ef3e0f, #ffb800);
+ }
+ .course-thumb .meta-area ul li a:hover i, .student-search-form::before, .foo-top ul.social-media li a:hover i,
+ .yacht-preview .yacht-slider .owl-dots button, .btn-filled:hover, .btn-default:hover
+ {
+    background-image: linear-gradient(to right, #ef3e0f, #ef3e0f);
+ }
+/******************
+ * SWITCHER STYLE *
+ ******************/
+.switcherContent{
+    border-bottom: 1px solid #ef3e0f
+}
+.switcher .switcherContents header,.switcher .switcherShowHide,.tempLayout ul .active-layout,.tempLayout ul li:hover{
+    background-image: linear-gradient(to right, #ef3e0f, #ffb800);
+}
+.tempLayout ul li{
+    border: 1px solid  #ef3e0f
+}

@@ -1,0 +1,86 @@
+.esante-font-mobile {
+    margin-bottom: 0.5rem;
+    font-family: Arial black !important;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 1.2;
+    color: #fff;
+}
+
+@media (min-width: 750px) {
+    .modal-xl {
+        width: 90%;
+       max-width:1200px;
+    }
+}
+
+.form-control:focus {
+    color: #665c70 !important;
+    background-color: #fff;
+    border-color: #3765c9 !important;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(102, 51, 153, 0.25); 
+}
+
+.dropdown-item.active, .dropdown-item:active {
+    color: #000000 !important;
+    text-decoration: none;
+    background-color: #f8f9fa !important; 
+}
+.app-admin-wrap.sidebar-compact-onhover .sidebar-compact-switch {
+  background: #000000 !important; 
+}
+
+.active_menu{
+  background-color: #ebe5f1;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  }
+.form-control:focus {
+    color: #665c70;
+    background-color: #fff;
+    border-color: #3873f3 !important;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(102, 51, 153, 0.25); 
+}
+.page-item.active .page-link {
+    z-index: 1;
+    color: #fff;
+    background-color: #3873f3 !important;
+    border-color: #3873f3 !important;
+}
+.nav-tabs {
+    border-bottom: 1px solid #3873f3 !important;
+}
+.nav-tabs .nav-item .nav-link.active {
+    border: 1px solid transparent;
+    background: rgba(102, 51, 153, 0.1);
+    border-color: #3873f3 #3873f3 #fff !important;
+}
+
+.card-icon-bg-primary [class^="i-"] {
+    color: #4477BB !important;
+}
+
+.text-muted {
+    color: #4477BB !important;
+}
+.text-primary {
+    color: #4477BB !important;
+}
+.esante-font {
+    margin-bottom: 0.5rem;
+    font-family: Arial black !important;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 1.2;
+    color: inherit;
+}
+
+@-webkit-keyframes spin{
+    0%{transform:rotate(0deg)}to{transform:rotate(1turn)}
+}
+@keyframes spin{0%{transform:rotate(0deg)}to{transform:rotate(1turn)}}
+
+
+
