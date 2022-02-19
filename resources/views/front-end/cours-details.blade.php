@@ -113,7 +113,7 @@
                         <div class="widget buy-course">
                             <p class="price"><strong>{{number_format($cour->prix, 0, ',', ' ')}} F CFA</strong></p>
                             <span class="discount-price"> {{$cour->duree}}&nbsp; <i class="ti-timer"></i></span>
-                            <a href="#" class="btn btn-filled">
+                            <a href="#" onclick="popAction()" class="btn btn-filled">
                                 {{$cour->mode->slug != 'cours-video' ? 'Reserver' : 'Achetez'}} 
                             </a>
                         </div>
@@ -157,4 +157,10 @@
         </div>
     </section>
     <!-- Courses Details section end -->
+
+    <script>
+        function popAction(){
+            alert("Veillez contactez ce numéro pour reserver ou acheter un cours : +223 76 00 11 34 ");
+        }
+    </script>
 @endsection

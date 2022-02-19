@@ -37,7 +37,7 @@
                             <div class="meta-area">
                                 <ul>
                                     <li>
-                                        <a href="#" data-toggle="tooltip" data-placement="top" title="{{$cour->mode->slug != 'cours-video' ? 'Reservez' : 'Achetez'}}"><i class="ti-heart"></i> </a>
+                                        <a href="#" onclick="popAction()" data-toggle="tooltip" data-placement="top" title="{{$cour->mode->slug != 'cours-video' ? 'Reservez' : 'Achetez'}}"><i class="ti-heart"></i> </a>
                                     </li>
                                 </ul>
                             </div>
@@ -73,4 +73,10 @@
         </div>
     </section>
     <!-- Yachts section end -->
+
+    <script>
+        function popAction(){
+            alert("Veillez contactez ce numéro pour reserver ou acheter un cours : +223 76 00 11 34 ");
+        }
+    </script>
 @endsection

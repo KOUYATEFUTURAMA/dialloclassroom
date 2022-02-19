@@ -3,7 +3,7 @@
 	<!--begin::Head-->
 	<head>
 		<meta charset="utf-8" />
-		<title>D-Classroom | Confirmation du compte</title>
+		<title>Dialloclassroom | Confirmation du compte</title>
 		<meta name="description" content="Login page example" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 		<!--begin::Fonts-->
@@ -60,7 +60,7 @@
 									<div class="pb-13 pt-lg-0 pt-5">
 										<h3 class="font-weight-bolder text-dark font-size-h4 font-size-h1-lg">
 											<a href="/">
-												<img src="{{asset('template/media/logos/logo.jpeg')}}" alt="logo" class="h-70px" /> D-Classroom
+												<img src="{{asset('template/media/logos/logo.jpeg')}}" alt="logo" class="h-70px" /> Dialloclassroom
 											</a>
                                         </h3>
                                         <p class="font-weight-bolder text-dark font-size-h5" style="text-align: center;">Confirmation de votre compte</p>
@@ -113,7 +113,7 @@
 										<br/>
 									<div class="font-size-h6 font-weight-bolder order-2 order-md-1 py-2 py-md-0">
 							<span class="text-muted font-weight-bold mr-2">Copyright &copy; 2021</span>
-							<a class="text-dark-50">D-Classroom  </a>, All rights reserved.
+							<a class="text-dark-50">Dialloclassroom  </a>, All rights reserved.
 						</div>
 									<!--end::Action-->
 								</form>

@@ -93,8 +93,6 @@ class BlogController extends Controller
                     $img = Image::make($data['image']);
                     $image_detail = Image::make($data['image']);
 
-                    $img->resize(350, 200);
-                    
                     $img->save(storage_path('app/public/img/blog/'.$file_name),60);
                     $blog->image = '/storage/img/blog/'.$file_name;
 

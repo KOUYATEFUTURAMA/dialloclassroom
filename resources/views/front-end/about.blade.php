@@ -125,7 +125,6 @@
                                     <a href="#" class="youtube"><i class="ti-youtube"></i></a>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                     <div class="col-md-3">

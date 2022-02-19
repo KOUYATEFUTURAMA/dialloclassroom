@@ -3,51 +3,19 @@
 <!-- Banner start -->
     <section class="banner v2">
         <div class="owl-carousel hero-slider">
-            <div class="item" style="background-image: url('front-end/images/slider/slider1.jpg');">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-7 col-md-7">
-                            <div class="banner-content">
-                                <h2><span>Des certificats</span> reconnus par l'etat</h2>
+            @foreach ($sliders as $slider)
+                <div class="item" style="background-image:url('{{url($slider->image) }}');">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-7 col-md-7">
+                                <div class="banner-content">
+                                    <h2><span>{{$slider->libelle_slider}}</h2>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="item" style="background-image: url('front-end/images/slider/slider2.jpg');">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-7 col-md-7">
-                            <div class="banner-content">
-                                <h2><span>Un cadre ad&eacute;quat</span> pour un apprentissage de qualit&eacute;</h2>
-                                <!--p>Nous avons des salles adapt&eacute;es pour votre formation.</p-->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="item" style="background-image: url('front-end/images/slider/slider3.jpg');">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-7 col-md-7">
-                            <div class="banner-content">
-                                <h2><span>Des cours en ligne disponible.</span> </h2>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="item" style="background-image: url('front-end/images/slider/slider4.jpg');">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-7 col-md-7">
-                            <div class="banner-content">
-                                <h2><span>D-classrom</span> PERFECTIONNER VOTRE CARRIERE AVEC NOS FORMATIONS PROFESSIONNELLES. ! </h2>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </section>
 
@@ -57,7 +25,7 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="iconBox text-center">
-                        <img src="{{asset('front-end/images/icons/1.jpg')}}" alt="image icon">
+                        <img src="{{asset('front-end/images/icons/1.jpeg')}}" alt="image icon">
                         <h5>
                             <a>Plus de 1000 vid&eacute;os de formation disponibles.</a>
                         </h5>
@@ -65,7 +33,7 @@
                 </div>
                 <div class="col-md-4"> 
                     <div class="iconBox text-center">
-                        <img src="{{asset('front-end/images/icons/2.jpg')}}" alt="image icon">
+                        <img src="{{asset('front-end/images/icons/2.jpeg')}}" alt="image icon">
                         <h5>
                             <a>Des formations en pr&eacute;sentilles, en lignes et en vid&eacute;o.</a>
                         </h5>
@@ -73,7 +41,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="iconBox text-center">
-                        <img src="{{asset('front-end/images/icons/3.jpg')}}" alt="image icon">
+                        <img src="{{asset('front-end/images/icons/3.jpeg')}}" alt="image icon">
                         <h5>
                             <a>Des formateurs experiment&eacute;s dans le domaine du b&acirc;timent.</a>
                         </h5>
@@ -84,7 +52,7 @@
     </section>
     <!-- Feature section end -->
 
-    <!-- Courses section start -->
+    <!-- Cours section start -->
     <section class="courses home bg-offwhite">
         <div class="container">
             <div class="row">
@@ -110,7 +78,7 @@
                             <div class="meta-area">
                                 <ul>
                                     <li>
-                                        <a href="#" data-toggle="tooltip" data-placement="top" title="{{$cours->mode->slug != 'cours-video' ? 'Reservez' : 'Achetez'}}"><i class="ti-heart"></i> </a>
+                                        <a href="#" onclick="popAction()" data-toggle="tooltip" data-placement="top" title="{{$cours->mode->slug != 'cours-video' ? 'Reservez' : 'Achetez'}}"><i class="ti-heart"></i> </a>
                                     </li>
                                 </ul>
                             </div>
@@ -140,7 +108,31 @@
             </div>
         </div>
     </section>
-    <!-- Courses section end -->
+    <!-- Cours section end -->
+
+    <!-- Gallery section start -->
+    <section class="courses home bg-offwhite">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-9 m-auto text-center">
+                    <div class="sec-heading">
+                        <h3 class="sec-title">Gallerie</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                @foreach ($videos as $video)
+                <div class="col-lg-4 col-md-6">
+                    <figure>
+                        <video src="{{asset($video->video)}}" controls class="rounded" style="width: 100%;" height="300"> 
+                        </video>
+                    </figure>
+                </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+    <!-- Gallery section end -->
 
     <!-- Work section start -->
     <section class="work bg-bluewhite">
@@ -221,31 +213,32 @@
     <section class="testimonial">
         <div class="container">
             <div class="row">
-                <div class="col-lg-7 col-md-9 m-auto text-center">
+                <div class="col-lg-6 col-md-9 m-auto text-center">
                     <div class="sec-heading">
-                        <h3 class="sec-title text-white">Les avis des internautes</h3>
+                        <h3 class="sec-title text-white">Nos formateurs</h3>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-10 col-md-12 m-auto">
-                    <div class="testimonialBox">                        
-                        <div class="test-caro owl-carousel owl-loaded owl-drag" data-slider-id="1">
-                            <div class="owl-stage-outer">
-                                <div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s; width: 2580px;">
-                                    @foreach ($avis as $avi)
-                                    <div class="owl-item active" style="width: 860px;">
-                                        <div class="single-testimonial">
-                                            <div class="testimonial-user">
-                                                <img src="{{asset('front-end/images/avatar-small.png')}}" class="avatar-small circle" alt="">
-                                            </div>
-                                            <p>{{Str::limit($avi->content, 150, '...')}}</p>
-                                            <span class="quote-sign"><i class="ti-quote-left"></i></span>
+            <div class="testimonialBox">                        
+                <div class="test-caro owl-carousel owl-loaded owl-drag">
+                        <div class="owl-stage-outer">
+                            <div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: all 0s ease 0s;">
+                                @foreach ($enseignants as $enseignant)
+                                    <div class="owl-item">
+                                        <div class="single-course">
+                                            <figure class="course-thumb">
+                                                <img src="{{asset($enseignant->image)}}" alt="formateur">
+                                                <div class="info-area">
+                                                    <ul>
+                                                        <li>
+                                                            <a class="used" data-toggle="tooltip" data-placement="top" title="{{$enseignant->name}}">{{$enseignant->name}}</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </figure>
                                         </div>
                                     </div>
-                                    @endforeach
-                                </div>
-                            </div>
+                                @endforeach
                         </div>
                     </div>
                 </div>
@@ -283,4 +276,10 @@
         </div>
     </section>
     <!-- Blog section end -->
+
+    <script>
+        function popAction(){
+            alert("Veillez contactez ce numéro pour reserver ou acheter un cours : +223 76 00 11 34 ");
+        }
+    </script>
 @endsection

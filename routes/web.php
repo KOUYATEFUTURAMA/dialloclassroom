@@ -70,6 +70,12 @@ Route::namespace('Site')->middleware('auth')->name('site.')->prefix('site')->gro
 
     Route::resource('messages', 'MessageController');
     Route::get('liste-messages', 'MessageController@listeMessage');
+
+    Route::resource('sliders', 'SliderController');
+    Route::get('liste-sliders', 'SliderController@listeSlider');
+
+    Route::resource('videos', 'VideoController');
+    Route::get('liste-videos', 'VideoController@listeVideo');
 });
 
 

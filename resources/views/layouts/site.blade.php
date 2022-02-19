@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!--Title -->
-    <title>D-Classroom</title>
+    <title>Dialloclassroom</title>
 
     <!-- Favicon icons -->
-    <link href="images/favicon.png" rel="shortcut icon">
+    <link rel="shortcut icon" href="{{asset('template/media/logos/logo.jpeg')}}" />
 
     <!-- All CSS -->
     <link rel="stylesheet" href="{{asset('front-end/css/bootstrap.min.css')}}">
@@ -55,7 +55,7 @@
                 <nav class="navbar">
                     <!-- Site logo -->
                     <a href="{{route('web.index')}}" class="logo">
-                        <span class=""><span>D-Classroom</span></span>
+                        <span class=""><span>Dialloclassroom</span></span>
                     </a>
     
                     <a href="javascript:void(0);" id="mobile-menu-toggler">
@@ -86,7 +86,7 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="widget widget-navigation">
-                            <h4 class="widget-title" style="color:#fff">D-CLASSROM</h4>
+                            <h4 class="widget-title" style="color:#fff">DIALLOCLASSROM</h4>
                             <div class="widget-content">
                                 <p style="color:#fff">
                                 Startup de Formation, Diallo Classroom est un Cabinet de renforcement de comp&eacute;tences dans le domaine du BTP.
@@ -146,7 +146,7 @@
             <div class="container">
                 <p class="copyright">Copyright © <script>
                         document.write(new Date().getFullYear());
-                    </script> <i class="ti-heart"></i> <a href="#">D-classroom</a>. All rights reserved.</p>
+                    </script> <i class="ti-heart"></i> <a href="#">Dialloclassroom</a>. All rights reserved.</p>
             </div>
         </div>
     </footer>

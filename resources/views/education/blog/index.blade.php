@@ -98,7 +98,7 @@
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label>Image principale *</label>
+                                    <label>Image principale * (Taille : 960 x 720)</label>
                                     <input type="file" class="form-control" name="image" id="image">
                                 </div>
                             </div>

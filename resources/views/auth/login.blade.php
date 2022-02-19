@@ -3,7 +3,7 @@
 	<!--begin::Head-->
 	<head>
 		<meta charset="utf-8" />
-		<title>D-Classroom | Connexion</title>
+		<title>Dialloclassroom | Connexion</title>
 		<meta name="description" content="Login page example" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 		<!--begin::Fonts-->
@@ -96,7 +96,7 @@
 									<br/>
 									<div class="font-size-h9 font-weight-bolder order-2 order-md-1 py-2 py-md-0">
 							<span class="text-muted font-weight-bold mr-2">Copyright &copy; 2022</span>
-							<a class="text-dark-50">D-Classroom  </a>
+							<a class="text-dark-50">Diallolassroom  </a>
 						</div>
 									<!--end::Action-->
 								</form>

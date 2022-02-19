@@ -35,6 +35,22 @@
                     <span class="menu-text">Messages</span>
                 </a>
             </li>
+            <li class="menu-item {{Route::currentRouteName() === 'site.sliders.index' ? 'menu-item-active' : ''}}" aria-haspopup="true">
+                <a href="{{route('site.sliders.index')}}" class="menu-link">
+                    <i class="menu-bullet menu-bullet-dot">
+                        <span></span>
+                    </i>
+                    <span class="menu-text">Slider</span>
+                </a>
+            </li>
+            <li class="menu-item {{Route::currentRouteName() === 'site.videos.index' ? 'menu-item-active' : ''}}" aria-haspopup="true">
+                <a href="{{route('site.videos.index')}}" class="menu-link">
+                    <i class="menu-bullet menu-bullet-dot">
+                        <span></span>
+                    </i>
+                    <span class="menu-text">Vid&eacute;os</span>
+                </a>
+            </li>
         </ul>
     </div>
 </li>

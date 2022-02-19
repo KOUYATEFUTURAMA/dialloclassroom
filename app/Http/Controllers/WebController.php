@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Site\Video;
+use App\Models\Site\Slider;
 use Illuminate\Support\Str;
 use App\Models\Site\Comment;
 use App\Models\Site\Message;
@@ -9,6 +11,7 @@ use Illuminate\Http\Request;
 use App\Models\Education\Blog;
 use App\Models\Education\Cour;
 use App\Models\Parametre\Categorie;
+use App\Models\Education\Enseignant;
 
 class WebController extends Controller
 {
@@ -19,9 +22,12 @@ class WebController extends Controller
         $last_blogs = Blog::with('categorie')->where('publier',1)
                                     ->orderBy('created_at','desc')->take(3)->get();
 
-        $avis = Comment::where('avis_favo',0)->orderBy('created_at','desc')->take(5)->get();
+        $enseignants = Enseignant::where('aff_sur_site',1)->orderBy('created_at','desc')->take(5)->get();
+        $sliders = Slider::orderBy('created_at','desc')->take(4)->get();
 
-        return view('front-end.index',compact('cours_en_vedettes','last_blogs','avis'));
+        $videos = Video::orderBy('created_at','desc')->take(3)->get();
+
+        return view('front-end.index',compact('cours_en_vedettes','last_blogs','enseignants','sliders','videos'));
     }
 
     public function about(){

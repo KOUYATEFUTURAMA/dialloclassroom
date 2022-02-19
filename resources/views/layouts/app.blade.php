@@ -8,7 +8,7 @@
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ 'D-Classroom' }}</title>
+        <title>{{ 'Dialloclassroom' }}</title>
 
         <!-- Scripts -->
         <script src="{{asset('plugins/jQuery/query.min.js')}}"></script>
@@ -38,13 +38,13 @@
             @if(Auth::user()->role == 'Concepteur' or Auth::user()->role == 'Administrateur')
                 <a href="{{ route('home.admin') }}">
                     <img alt="Logo" src="{{asset('template/media/logos/logo.jpeg')}}" class="h-40px"/>
-                    &nbsp;<span class="esante-font-mobile"> D-Classroom </span>
+                    &nbsp;<span class="esante-font-mobile"> Dialloclassroom </span>
                 </a>
             @endif
             @if(Auth::user()->role == 'Client')
                 <a href="{{ route('home.client') }}">
                     <img alt="Logo" src="{{asset('template/media/logos/fav.jpeg')}}" class="h-40px"/>
-                    &nbsp;<span class="esante-font-mobile"> D-Classroom </span>
+                    &nbsp;<span class="esante-font-mobile"> Dialloclassroom </span>
                 </a>
             @endif
 			<div class="d-flex align-items-center">
@@ -85,7 +85,7 @@
                     <a href="{{ route('home.client') }}" class="menu-link">
                 @endif
                 <img alt="Logo" src="{{asset('template/media/logos/logo.jpeg')}}" class="h-50px" />
-                <span style="font-family: Arial black; font-weight: 500;font-size: 13px;line-height: 1.2;color: #fff;">D-Classroom</span>
+                <span style="font-family: Arial black; font-weight: 500;font-size: 13px;line-height: 1.2;color: #fff;">Dialloclassroom</span>
                 </a>
                 &nbsp;&nbsp;
                 <button class="aside-toggle btn btn-sm btn-icon-white" id="kt_aside_toggle">
@@ -185,7 +185,7 @@
                             <input type="hidden" id="user_role" value="{{Auth::user()->role}}"/>
 							 <div class="text-dark order-2 order-md-1">
                                     <span class="text-muted font-weight-bold mr-2">Copyright &copy; 2021</span>
-                                    <a class="text-dark-50">D-Classroom </a>All rights reserved.
+                                    <a class="text-dark-50">Dialloclassroom</a>All rights reserved.
                                 </div>
 						</div>
 					</div>

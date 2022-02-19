@@ -18,6 +18,8 @@ class CreateEnseignantsTable extends Migration
             $table->string('name');
             $table->string('contact');
             $table->string('email')->nullable();
+            $table->string('image')->nullable();
+            $table->boolean('aff_sur_site')->default(0);
             $table->timestamps();
         });
     }

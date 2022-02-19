@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Education;
 
+use Image;
 use Exception;
 use Illuminate\Http\Request;
 use App\Models\Education\Cour;
@@ -61,6 +62,16 @@ class EnseignantController extends Controller
                 $enseignant->name = $data['name'];
                 $enseignant->contact = $data['contact'];
                 $enseignant->email = isset($data['email']) ? $data['email'] : NULL;
+                $enseignant->aff_sur_site = isset($data['aff_sur_site']) ? TRUE : FALSE;
+
+                if(isset($data['image'])){
+                    $file_name = 'image_prof'.date('dmYHis').'.jpg';
+
+                    $img = Image::make($data['image']);
+                    $img->save(storage_path('app/public/img/prof/'.$file_name),60);
+                    $enseignant->image = '/storage/img/prof/'.$file_name;
+                }
+
                 $enseignant->save();
 
                 $jsonData["data"] = json_decode($enseignant);
