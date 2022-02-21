@@ -48,7 +48,6 @@
                 </div>  
             </div><!-- END .CONTAINER -->
         </div>
-    
         <!-- Header strat -->
         <header class="header">
             <div class="container">

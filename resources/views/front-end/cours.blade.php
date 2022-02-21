@@ -1,5 +1,9 @@
 @extends('layouts.site')
 @section('content')
+<link href="{{asset('template/plugins/global/plugins.bundle.css')}}" rel="stylesheet" type="text/css" />
+<script src="{{asset('plugins/jQuery/query.min.js')}}"></script>
+<script src="{{asset('template/js/pages/features/miscellaneous/sweetalert2.js')}}"></script>
+<script src="{{asset('template/plugins/global/plugins.bundle.js')}}"></script>
     <!-- Page feature start -->
     <section class="page-feature pt-4">
         <div class="container text-center">
@@ -37,7 +41,7 @@
                             <div class="meta-area">
                                 <ul>
                                     <li>
-                                        <a href="#" onclick="popAction()" data-toggle="tooltip" data-placement="top" title="{{$cour->mode->slug != 'cours-video' ? 'Reservez' : 'Achetez'}}"><i class="ti-heart"></i> </a>
+                                        <a style="cursor: pointer;" onclick="popAction()" data-toggle="tooltip" data-placement="top" title="{{$cour->mode->slug != 'cours-video' ? 'Reservez' : 'Achetez'}}"><i class="ti-heart"></i> </a>
                                     </li>
                                 </ul>
                             </div>
@@ -76,7 +80,15 @@
 
     <script>
         function popAction(){
-            alert("Veillez contactez ce numéro pour reserver ou acheter un cours : +223 76 00 11 34 ");
+            Swal.fire({
+                title: 'Contactez ce numéro pour acheter ou reserver un cour. +223 76 00 11 34',
+                showClass: {
+                    popup: 'animate__animated animate__fadeInDown'
+                },
+                hideClass: {
+                    popup: 'animate__animated animate__fadeOutUp'
+                }
+            });
         }
     </script>
 @endsection

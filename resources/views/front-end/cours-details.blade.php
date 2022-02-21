@@ -1,5 +1,9 @@
 @extends('layouts.site')
 @section('content')
+<link href="{{asset('template/plugins/global/plugins.bundle.css')}}" rel="stylesheet" type="text/css" />
+<script src="{{asset('plugins/jQuery/query.min.js')}}"></script>
+<script src="{{asset('template/js/pages/features/miscellaneous/sweetalert2.js')}}"></script>
+<script src="{{asset('template/plugins/global/plugins.bundle.js')}}"></script>
     <!-- Page feature start -->
     <section class="page-feature py-5">
         <div class="container text-center">
@@ -113,7 +117,7 @@
                         <div class="widget buy-course">
                             <p class="price"><strong>{{number_format($cour->prix, 0, ',', ' ')}} F CFA</strong></p>
                             <span class="discount-price"> {{$cour->duree}}&nbsp; <i class="ti-timer"></i></span>
-                            <a href="#" onclick="popAction()" class="btn btn-filled">
+                            <a style="cursor:pointer; color:#fff;" onclick="popAction()" class="btn btn-filled">
                                 {{$cour->mode->slug != 'cours-video' ? 'Reserver' : 'Achetez'}} 
                             </a>
                         </div>
@@ -160,7 +164,15 @@
 
     <script>
         function popAction(){
-            alert("Veillez contactez ce numéro pour reserver ou acheter un cours : +223 76 00 11 34 ");
+            Swal.fire({
+                title: 'Contactez ce numéro pour acheter ou reserver un cour. +223 76 00 11 34',
+                showClass: {
+                    popup: 'animate__animated animate__fadeInDown'
+                },
+                hideClass: {
+                    popup: 'animate__animated animate__fadeOutUp'
+                }
+            });
         }
     </script>
 @endsection

@@ -1,10 +1,14 @@
 @extends('layouts.site')
 @section('content')
+<link href="{{asset('template/plugins/global/plugins.bundle.css')}}" rel="stylesheet" type="text/css" />
+<script src="{{asset('plugins/jQuery/query.min.js')}}"></script>
+<script src="{{asset('template/js/pages/features/miscellaneous/sweetalert2.js')}}"></script>
+<script src="{{asset('template/plugins/global/plugins.bundle.js')}}"></script>
 <!-- Banner start -->
     <section class="banner v2">
         <div class="owl-carousel hero-slider">
             @foreach ($sliders as $slider)
-                <div class="item" style="background-image:url('{{url($slider->image) }}');">
+                <div class="item" style="background-image:url('{{url($slider->image) }}'); border: solid #0c2e60;">
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-7 col-md-7">
@@ -23,14 +27,6 @@
     <section class="feature pt-4">
         <div class="container">
             <div class="row">
-                <div class="col-md-4">
-                    <div class="iconBox text-center">
-                        <img src="{{asset('front-end/images/icons/1.jpeg')}}" alt="image icon">
-                        <h5>
-                            <a>Plus de 1000 vid&eacute;os de formation disponibles.</a>
-                        </h5>
-                    </div>
-                </div>
                 <div class="col-md-4"> 
                     <div class="iconBox text-center">
                         <img src="{{asset('front-end/images/icons/2.jpeg')}}" alt="image icon">
@@ -44,6 +40,14 @@
                         <img src="{{asset('front-end/images/icons/3.jpeg')}}" alt="image icon">
                         <h5>
                             <a>Des formateurs experiment&eacute;s dans le domaine du b&acirc;timent.</a>
+                        </h5>
+                    </div>
+                </div>
+                 <div class="col-md-4">
+                    <div class="iconBox text-center">
+                        <img src="{{asset('front-end/images/icons/1.jpeg')}}" alt="image icon">
+                        <h5>
+                            <a>Plus de 1000 vid&eacute;os de formation disponibles.</a>
                         </h5>
                     </div>
                 </div>
@@ -78,7 +82,7 @@
                             <div class="meta-area">
                                 <ul>
                                     <li>
-                                        <a href="#" onclick="popAction()" data-toggle="tooltip" data-placement="top" title="{{$cours->mode->slug != 'cours-video' ? 'Reservez' : 'Achetez'}}"><i class="ti-heart"></i> </a>
+                                        <a style="cursor: pointer;" onclick="popAction()" data-toggle="tooltip" data-placement="top" title="{{$cours->mode->slug != 'cours-video' ? 'Reservez' : 'Achetez'}}"><i class="ti-heart"></i> </a>
                                     </li>
                                 </ul>
                             </div>
@@ -111,22 +115,23 @@
     <!-- Cours section end -->
 
     <!-- Gallery section start -->
-    <section class="courses home bg-offwhite">
+    <section class="courses home" style="background-color:#0c2e60;">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-md-9 m-auto text-center">
                     <div class="sec-heading">
-                        <h3 class="sec-title">Gallerie</h3>
+                        <h3 class="sec-title text-white">Gallerie vid&eacute;o</h3>
                     </div>
                 </div>
             </div>
             <div class="row">
                 @foreach ($videos as $video)
                 <div class="col-lg-4 col-md-6">
-                    <figure>
+                    <figure style="border: thick double #fff;">
                         <video src="{{asset($video->video)}}" controls class="rounded" style="width: 100%;" height="300"> 
                         </video>
                     </figure>
+                    <h3 class="text-white mt-2">{{$video->titre}}</h3>
                 </div>
                 @endforeach
             </div>
@@ -190,7 +195,7 @@
                                     <span class="icon-bg">
                                         <i class="ti-video-clapper"></i>
                                     </span>
-                                    <h5>Cours en ligen</h5>
+                                    <h5>Cours en ligne</h5>
                                     <p>Des cours en lignes sont organis&eacute;s pour faciliter l'acc&egrave;s des cours &agrave; tous.</p>
                                 </li>
                                 <li>
@@ -226,7 +231,7 @@
                                 @foreach ($enseignants as $enseignant)
                                     <div class="owl-item">
                                         <div class="single-course">
-                                            <figure class="course-thumb">
+                                            <figure class="course-thumb" style="border-style: inset;">
                                                 <img src="{{asset($enseignant->image)}}" alt="formateur">
                                                 <div class="info-area">
                                                     <ul>
@@ -279,7 +284,15 @@
 
     <script>
         function popAction(){
-            alert("Veillez contactez ce numéro pour reserver ou acheter un cours : +223 76 00 11 34 ");
+            Swal.fire({
+                title: 'Contactez ce numéro pour acheter ou reserver un cour. +223 76 00 11 34',
+                showClass: {
+                    popup: 'animate__animated animate__fadeInDown'
+                },
+                hideClass: {
+                    popup: 'animate__animated animate__fadeOutUp'
+                }
+            });
         }
     </script>
 @endsection
