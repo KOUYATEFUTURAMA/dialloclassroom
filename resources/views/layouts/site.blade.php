@@ -9,7 +9,7 @@
     <title>Dialloclassroom</title>
 
     <!-- Favicon icons -->
-    <link rel="shortcut icon" href="{{asset('template/media/logos/logo.jpeg')}}" />
+     <link rel="shortcut icon" href="{{asset('template/media/logos/logo.jpg')}}" />
 
     <!-- All CSS -->
     <link rel="stylesheet" href="{{asset('front-end/css/bootstrap.min.css')}}">
@@ -19,7 +19,6 @@
     <link rel="stylesheet" href="{{asset('front-end/css/daterangepicker.css')}}">
     <link rel="stylesheet" href="{{asset('front-end/css/fonts/flaticon.css')}}">
     <link rel="stylesheet" href="{{asset('front-end/css/style.css')}}">
-
     </head>
     <body>
         <!-- Preloader -->
@@ -48,6 +47,7 @@
                 </div>  
             </div><!-- END .CONTAINER -->
         </div>
+    
         <!-- Header strat -->
         <header class="header">
             <div class="container">
@@ -64,14 +64,19 @@
                         <li>
                             <a href="{{route('web.index')}}">Accueil</a>
                         </li>
-                        <li><a href="{{route('web.about')}}">Apropos de nous</a></li>
+                        <li><a href="{{route('web.about')}}">A propos de nous</a></li>
                         <li>
                             <a href="{{route('web.cours')}}">Cours</a>
                         </li>
                         <li>
                             <a href="{{route('web.blogs')}}">Blogs</a>
                         </li>
-                        <li><a href="{{route('web.contact')}}">Contact</a></li>
+                        <li>
+                            <a href="{{route('web.galeries')}}">VIDEOS</a>
+                        </li>
+                        <li>
+                            <a href="{{route('web.contact')}}">Contact</a>
+                        </li>
                     </ul>
                 </nav>
             </div>
@@ -119,10 +124,10 @@
                             <h4 class="widget-title" style="color:#fff">Liens rapides</h4>
                             <ul>
                                 <li><a href="#" style="color:#fff">D&eacute;claration de confidentialit&eacute;</a></li>
-                                <li><a href="#" style="color:#fff">Liste des cours</a></li>
-                                <li><a href="#" style="color:#fff">Voir notre blog</a></li>
+                                <li><a href="{{route('web.cours')}}" style="color:#fff">Liste des cours</a></li>
+                                <li><a href="{{route('web.blogs')}}" style="color:#fff">Voir notre blog</a></li>
                                 <li><a href="#" style="color:#fff">Signaler une violation des droits d'auteur</a></li>
-                                <li><a href="#" style="color:#fff">Signaler un probl&egrave;me de s&eacute;curit&eacute;</a></li>
+                                <li><a href="{{route('web.contact')}}" style="color:#fff">Signaler un probl&egrave;me de s&eacute;curit&eacute;</a></li>
                             </ul>
                         </div>
                     </div>
@@ -134,7 +139,7 @@
                                 <li><a href="#" style="color:#fff">Politique de confidentialit&eacute;</a></li>
                                 <li><a href="#" style="color:#fff">Mentions L&eacute;gales</a></li>
                                 <li><a href="#" style="color:#fff">Param&egrave;trer les cookies</a></li>
-                                <li><a href="#" style="color:#fff">Nous rejoindre</a></li>
+                                <li><a href="{{route('web.contact')}}" style="color:#fff">Nous rejoindre</a></li>
                             </ul>
                         </div>
                     </div>

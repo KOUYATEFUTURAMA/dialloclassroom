@@ -1,9 +1,5 @@
 @extends('layouts.site')
 @section('content')
-<link href="{{asset('template/plugins/global/plugins.bundle.css')}}" rel="stylesheet" type="text/css" />
-<script src="{{asset('plugins/jQuery/query.min.js')}}"></script>
-<script src="{{asset('template/js/pages/features/miscellaneous/sweetalert2.js')}}"></script>
-<script src="{{asset('template/plugins/global/plugins.bundle.js')}}"></script>
     <!-- Page feature start -->
     <section class="page-feature pt-4">
         <div class="container text-center">
@@ -23,29 +19,34 @@
         </div>
     </section>
     <!-- Page feature end -->
-
     <!-- Yachts section start -->
     <section class="yachts pt-10">
         <div class="container">
             <div class="row">
                 @foreach ($cours as $cour)
-                
                 <div class="col-lg-4 col-md-6">
                     <div class="single-course">
-                        <figure class="course-thumb">
-                            <img src="{{asset($cour->image_descriptive)}}" alt="">
-                            <div class="info-area">
-                                <ul>
-                                </ul>
-                            </div>
-                            <div class="meta-area">
-                                <ul>
-                                    <li>
-                                        <a style="cursor: pointer;" onclick="popAction()" data-toggle="tooltip" data-placement="top" title="{{$cour->mode->slug != 'cours-video' ? 'Reservez' : 'Achetez'}}"><i class="ti-heart"></i> </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </figure>
+                        @if($cour->video_descriptive)
+                            <figure style="border: thick double #000000;">
+                                <video src="{{asset($cour->video_descriptive)}}" controls class="rounded" style="width: 100%;" height="175"> 
+                                </video>
+                            </figure>
+                        @else
+                            <figure class="course-thumb">
+                                <img src="{{asset($cour->image_descriptive)}}" alt="">
+                                <div class="info-area">
+                                    <ul>
+                                    </ul>
+                                </div>
+                                <div class="meta-area">
+                                    <ul>
+                                        <li>
+                                            <a href="{{$cour->link()}}" data-toggle="tooltip" data-placement="top" title="{{$cour->mode->slug != 'cours-video' ? 'Reservez' : 'Achetez'}}"><i class="ti-heart"></i> </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </figure>
+                        @endif
                         <div class="course-content">
                             <h3><a href="{{$cour->link()}}">{{Str::limit($cour->libelle_cours, 50, '...')}}</a></h3>
                             <hr class="my-2">
@@ -60,7 +61,7 @@
                                     {{$cour->nombre_place}}
                                 </dd>
                                 <dt class="product-item-part col-xs-5">Date</dt>
-                                <dd class="col-xs-7">{{ date('d-m-Y',strtotime($cour->date_cours)) }}</dd>
+                                <dd class="col-xs-7">{{ $cour->date_cours ? date('d-m-Y',strtotime($cour->date_cours)) : "Date indefinie" }}</dd>
                                 <dt class="product-item-part col-xs-5">Type</dt>
                                 <dd class="col-xs-7">{{ $cour->mode->libelle_mode }}</dd>
                             </dl>
@@ -77,18 +78,4 @@
         </div>
     </section>
     <!-- Yachts section end -->
-
-    <script>
-        function popAction(){
-            Swal.fire({
-                title: 'Contactez ce numéro pour acheter ou reserver un cour. +223 76 00 11 34',
-                showClass: {
-                    popup: 'animate__animated animate__fadeInDown'
-                },
-                hideClass: {
-                    popup: 'animate__animated animate__fadeOutUp'
-                }
-            });
-        }
-    </script>
 @endsection

@@ -595,3 +595,11 @@
 
 
 })(jQuery)
+
+if(typeof CinetPay !== 'undefined'){
+    CinetPay.setConfig({
+        apikey: '48449753161965f5836ab92.54669023',
+        site_id: '611860',
+        mode: 'PRODUCTION'
+    });
+}

@@ -25,7 +25,7 @@
         <link href="{{ asset('css/my-style.css') }}" rel="stylesheet">
         <link href="{{asset('template/plugins/global/plugins.bundle.css')}}" rel="stylesheet" type="text/css" />
         <link href="{{asset('template/css/style.bundle.css')}}" rel="stylesheet" type="text/css" />
-        <link rel="shortcut icon" href="{{asset('template/media/logos/logo.jpeg')}}" />
+        <link rel="shortcut icon" href="{{asset('template/media/logos/logo.jpg')}}" />
 
     </head>
     <body id="smartApp" ng-app="smartApp" class="header-mobile-fixed aside-enabled aside-fixed aside-minimize-hoverable page-loading">
@@ -37,13 +37,13 @@
 		<div id="kt_header_mobile" class="header-mobile">
             @if(Auth::user()->role == 'Concepteur' or Auth::user()->role == 'Administrateur')
                 <a href="{{ route('home.admin') }}">
-                    <img alt="Logo" src="{{asset('template/media/logos/logo.jpeg')}}" class="h-40px"/>
+                    <img alt="Logo" src="{{asset('template/media/logos/logo.jpg')}}" class="h-40px"/>
                     &nbsp;<span class="esante-font-mobile"> Dialloclassroom </span>
                 </a>
             @endif
             @if(Auth::user()->role == 'Client')
                 <a href="{{ route('home.client') }}">
-                    <img alt="Logo" src="{{asset('template/media/logos/fav.jpeg')}}" class="h-40px"/>
+                    <img alt="Logo" src="{{asset('template/media/logos/logo.jpg')}}" class="h-40px"/>
                     &nbsp;<span class="esante-font-mobile"> Dialloclassroom </span>
                 </a>
             @endif
@@ -84,7 +84,7 @@
                 @if(Auth::user()->role == 'Client')
                     <a href="{{ route('home.client') }}" class="menu-link">
                 @endif
-                <img alt="Logo" src="{{asset('template/media/logos/logo.jpeg')}}" class="h-50px" />
+                <img alt="Logo" src="{{asset('template/media/logos/logo.jpg')}}" class="h-50px" />
                 <span style="font-family: Arial black; font-weight: 500;font-size: 13px;line-height: 1.2;color: #fff;">Dialloclassroom</span>
                 </a>
                 &nbsp;&nbsp;

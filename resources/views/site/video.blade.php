@@ -56,7 +56,7 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label>Vid&eacute;o *</label>
+                                        <label>Vid&eacute;o * (100 Mo maxi)</label>
                                         <input type="file" class="form-control" name="video" id="video">
                                     </div>
                                 </div>

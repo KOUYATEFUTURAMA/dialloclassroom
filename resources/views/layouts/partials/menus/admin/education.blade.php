@@ -37,6 +37,22 @@
                     <span class="menu-text">Cours</span>
                 </a>
             </li>
+            <li class="menu-item {{Route::currentRouteName() === 'education.reservations.index' ? 'menu-item-active' : ''}}" aria-haspopup="true">
+                <a href="{{route('education.reservations.index')}}" class="menu-link">
+                    <i class="menu-bullet menu-bullet-dot">
+                        <span></span>
+                    </i>
+                    <span class="menu-text">R&eacute;servation de cours</span>
+                </a>
+            </li>
+            <li class="menu-item {{Route::currentRouteName() === 'education.reservations.achat' ? 'menu-item-active' : ''}}" aria-haspopup="true">
+                <a href="{{route('education.reservations.achat')}}" class="menu-link">
+                    <i class="menu-bullet menu-bullet-dot">
+                        <span></span>
+                    </i>
+                    <span class="menu-text">Achat de cours</span>
+                </a>
+            </li>
             <li class="menu-item {{Route::currentRouteName() === 'education.blogs.index' ? 'menu-item-active' : ''}}" aria-haspopup="true">
                 <a href="{{route('education.blogs.index')}}" class="menu-link">
                     <i class="menu-bullet menu-bullet-dot">

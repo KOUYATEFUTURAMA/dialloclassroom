@@ -61,6 +61,12 @@ Route::namespace('Education')->middleware('auth')->name('education.')->prefix('e
     Route::get('liste-blogs/{titre?}', 'BlogController@listeBlog');
     Route::get('liste-blogs-by-categorie/{categorie}', 'BlogController@listeBlogByCategorie');
     Route::post('ckeditor', 'BlogController@ckeditorUpload')->name('ckeditor.upload');
+
+    //Reservations 
+    Route::resource('reservations', 'ReservationController');
+    Route::get('achats', 'ReservationController@achatVue')->name('reservations.achat');
+    Route::get('liste-reservations', 'ReservationController@listeReservation');
+    Route::get('liste-achats', 'ReservationController@listeAchat');
 });
 
 //les routes du module Site
@@ -98,12 +104,16 @@ Route::get('/', 'WebController@index')->name('web.index');
 Route::get('/about', 'WebController@about')->name('web.about');
 Route::get('/cours', 'WebController@cours')->name('web.cours');
 Route::get('/blogs', 'WebController@blogs')->name('web.blogs');
+Route::get('/galeries', 'WebController@galeries')->name('web.galeries');
 Route::get('/contact', 'WebController@contact')->name('web.contact');
 Route::get('/site-login', 'WebController@login')->name('web.site-login');
 Route::get('/site-register', 'WebController@register')->name('web.site-register');
 
+Route::post('/retour-payement-success', 'WebController@retourPayementSuccess');
+
 Route::get('{slug}_c{id}.html', 'WebController@cour')->name('web.cours-details');
 Route::get('{slug}_b{id}.html', 'WebController@blog')->name('web.blog-details');
+Route::get('{slug}_a{id}.html', 'WebController@achatCour')->name('web.achat-cour');
 
 Route::post('comment/store', 'WebController@commentStore')->name('comment.store');
 Route::post('message/store', 'WebController@messageStore')->name('message.store');

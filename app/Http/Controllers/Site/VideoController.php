@@ -73,9 +73,9 @@ class VideoController extends Controller
                     if (!in_array($file_extention, $allowedExtensions)) {
                         return response()->json(["code" => 0, "msg" => "L'extension de votre fichier vidéo doit etre mp4, mov ou ogg", "data" => NULL]);
                     }
-                    //La video ne doit pas depasser 5Mo
-                    if($fileSize > 5){
-                        return response()->json(["code" => 0, "msg" => "La taille de votre vidéo ne doit pas dépasser 25 Mo", "data" => NULL]);
+                    //La video ne doit pas depasser 55Mo
+                    if($fileSize > 100){
+                        return response()->json(["code" => 0, "msg" => "La taille de votre vidéo ne doit pas dépasser 85 Mo", "data" => NULL]);
                     }
 
                     $file_name = 'video_pre_'.date("dmYHis").'.'. $file_extention;

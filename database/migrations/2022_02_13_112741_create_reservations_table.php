@@ -15,9 +15,15 @@ class CreateReservationsTable extends Migration
     {
         Schema::create('reservations', function (Blueprint $table) {
             $table->id();
-            $table->integer('client_id');
             $table->integer('cours_id');
-            $table->boolean('confirmer')->default(0);
+            $table->bigInteger('amount');
+            $table->string('payment_method');
+            $table->text('description');
+            $table->string('operator_id');
+            $table->dateTime('payment_date');
+            $table->string('name_costumer')->nullable();
+            $table->string('email_costumer')->nullable();
+            $table->string('contact_costumer')->nullable();
             $table->timestamps();
         });
     }

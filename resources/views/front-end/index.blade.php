@@ -29,25 +29,25 @@
             <div class="row">
                 <div class="col-md-4"> 
                     <div class="iconBox text-center">
-                        <img src="{{asset('front-end/images/icons/2.jpeg')}}" alt="image icon">
+                        <img src="{{asset('front-end/images/icons/3.jpg')}}" alt="image icon">
                         <h5>
-                            <a>Des formations en pr&eacute;sentilles, en lignes et en vid&eacute;o.</a>
+                            <a>Des formations en ligne avec des formateurs exp&eacute;riment&eacute;s. </a>
                         </h5>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="iconBox text-center">
-                        <img src="{{asset('front-end/images/icons/3.jpeg')}}" alt="image icon">
+                        <img src="{{asset('front-end/images/icons/2.jpg')}}" alt="image icon">
                         <h5>
-                            <a>Des formateurs experiment&eacute;s dans le domaine du b&acirc;timent.</a>
+                            <a>Des formations en pr&eacute;sidentielle avec des formateurs qualifi&eacute;s</a>
                         </h5>
                     </div>
                 </div>
                  <div class="col-md-4">
                     <div class="iconBox text-center">
-                        <img src="{{asset('front-end/images/icons/1.jpeg')}}" alt="image icon">
+                        <img src="{{asset('front-end/images/icons/1.jpg')}}" alt="image icon">
                         <h5>
-                            <a>Plus de 1000 vid&eacute;os de formation disponibles.</a>
+                            <a>Plus de 1000 vid&eacute;os de formation disponible.</a>
                         </h5>
                     </div>
                 </div>
@@ -82,7 +82,7 @@
                             <div class="meta-area">
                                 <ul>
                                     <li>
-                                        <a style="cursor: pointer;" onclick="popAction()" data-toggle="tooltip" data-placement="top" title="{{$cours->mode->slug != 'cours-video' ? 'Reservez' : 'Achetez'}}"><i class="ti-heart"></i> </a>
+                                        <a href="{{$cours->link()}}" data-toggle="tooltip" data-placement="top" title="{{$cours->mode->slug != 'cours-video' ? 'Reservez' : 'Achetez'}}"><i class="ti-heart"></i> </a>
                                     </li>
                                 </ul>
                             </div>
@@ -135,6 +135,12 @@
                 </div>
                 @endforeach
             </div>
+            <br/>
+            <p style="text-align: center;">
+                <a class="text-white btn btn-filled h4" href="{{route('web.galeries')}}">
+                    Voir d'autres vid&eacute;os 
+                </a> 
+            </p>
         </div>
     </section>
     <!-- Gallery section end -->
@@ -166,7 +172,7 @@
                                         <i class="ti-money"></i>
                                     </span>
                                     <h5>Special minoration</h5>
-                                    <p>Une remise de 10 000 F CFA s’applique sur chaque formation.</p>
+                                    <p>Une remise de 10 000 F CFA s’applique sur chaque formation pour les &eacute;tudiants.</p>
                                 </li>
                                 <li>
                                     <span class="icon-bg">

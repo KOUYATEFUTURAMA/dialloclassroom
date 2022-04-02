@@ -1,9 +1,5 @@
 @extends('layouts.site')
 @section('content')
-<link href="{{asset('template/plugins/global/plugins.bundle.css')}}" rel="stylesheet" type="text/css" />
-<script src="{{asset('plugins/jQuery/query.min.js')}}"></script>
-<script src="{{asset('template/js/pages/features/miscellaneous/sweetalert2.js')}}"></script>
-<script src="{{asset('template/plugins/global/plugins.bundle.js')}}"></script>
     <!-- Page feature start -->
     <section class="page-feature py-5">
         <div class="container text-center">
@@ -29,13 +25,17 @@
             <div class="row">
                 <div class="col-lg-9">
                     <div class="yacht-preview">
-                        <!-- <img src="images/course-preview.jpg" alt=""> -->
-                        <div class=" owl-carousel yacht-slider">
-                            <div class="item">
-                                <img src="{{asset($cour->image_descriptive_slider)}}" alt="">
-                            </div>
+                        <div class="owl-carousel yacht-slider">
+                            @if($cour->video_descriptive)
+                                <div class="item">
+                                    <video src="{{asset($cour->video_descriptive)}}" class="rounded" style="width:100%;" height="350" controls></video>
+                                </div>
+                            @else
+                                <div class="item">
+                                    <img src="{{asset($cour->image_descriptive_slider)}}" alt="">
+                                </div>
+                            @endif
                         </div>
-                        <!-- <a href="#" class="preview-btn"><i class="ti-control-play"></i></a> -->
                     </div>
                     <div class="course-content">
                         <h3 class="text-left">{{$cour->libelle_cours}}</h3>
@@ -115,9 +115,9 @@
                 <div class="col-lg-3">
                     <aside class="sidebar">
                         <div class="widget buy-course">
-                            <p class="price"><strong>{{number_format($cour->prix, 0, ',', ' ')}} F CFA</strong></p>
+                            <p class="price"><strong>{{$cour->mode->slug == 'cours-video' ? number_format($cour->prix, 0, ',', ' ') : number_format(5000, 0, ',', ' ')}} F CFA</strong></p>
                             <span class="discount-price"> {{$cour->duree}}&nbsp; <i class="ti-timer"></i></span>
-                            <a style="cursor:pointer; color:#fff;" onclick="popAction()" class="btn btn-filled">
+                            <a href="{{$cour->achatCour()}}" style="cursor:pointer; color:#fff;" class="btn btn-filled">
                                 {{$cour->mode->slug != 'cours-video' ? 'Reserver' : 'Achetez'}} 
                             </a>
                         </div>
@@ -128,13 +128,13 @@
                                 </figure>
                                 <h4>{{$cour->enseignant->name}}</h4>
                                 <span>Formateur</span>
-                                <!-- <span class="total-courses"><i class="ti-user"></i> 09 Courses</span> -->
+                                <!-- <span class="total-courses"><i class="ti-user"></i> 09 Courses</span> 
                                 <div class="socials">
                                     <a href="#" class="facebook"><i class="ti-facebook"></i></a>
                                     <a href="#" class="twitter"><i class="ti-twitter-alt"></i></a>
                                     <a href="#" class="linkedin"><i class="ti-linkedin"></i></a>
                                     <a href="#" class="youtube"><i class="ti-youtube"></i></a>
-                                </div>
+                                </div>-->
                             </div>
                         @endif    
                         <div class="widget recent-courses">
@@ -161,18 +161,4 @@
         </div>
     </section>
     <!-- Courses Details section end -->
-
-    <script>
-        function popAction(){
-            Swal.fire({
-                title: 'Contactez ce numéro pour acheter ou reserver un cour. +223 76 00 11 34',
-                showClass: {
-                    popup: 'animate__animated animate__fadeInDown'
-                },
-                hideClass: {
-                    popup: 'animate__animated animate__fadeOutUp'
-                }
-            });
-        }
-    </script>
 @endsection

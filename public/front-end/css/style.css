@@ -1035,6 +1035,7 @@ a#compare {
   background-position: center;
   position: relative;
   height: 811px !important;
+  width: 100% !important;
 }
 
 .banner .hero-slider .item:before {

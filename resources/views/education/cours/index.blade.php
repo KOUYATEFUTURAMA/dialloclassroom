@@ -10,75 +10,75 @@
 <link href="{{asset('plugins/bootstrap-table/dist/bootstrap-table.min.css')}}" rel="stylesheet">
 <div class="card-body">
     <div class="bg-white rounded shadow-sm py-10 px-10 px-lg-20">
-    <div class="row">
-        <div class="col-xl-4">
-            <div class="form-group">
-                <label for="libelle_cours">Recherche par titre</label>
-                <input type="text" onkeyup="this.value = this.value.charAt(0).toUpperCase() + this.value.substr(1);" class="form-control"  id="searcheByLibelle"  placeholder="Rechercher..." >
-            </div>
-        </div>
-        <div class="col-xl-3">
-            <div class="form-group">
-                <label for="mode_id">Recherche par mode</label>
-                <div class="input-group input-group-sm">
-                    <select class="form-control" id="searchByMode">
-                        <option value="0"> Tous les modes de cours</option>
-                        @foreach($modes as $mode)
-                        <option value="{{$mode->id}}"> {{$mode->libelle_mode}}</option>
-                        @endforeach
-                    </select>
+        <div class="row">
+            <div class="col-xl-4">
+                <div class="form-group">
+                    <label for="libelle_cours">Recherche par titre</label>
+                    <input type="text" onkeyup="this.value = this.value.charAt(0).toUpperCase() + this.value.substr(1);" class="form-control"  id="searcheByLibelle"  placeholder="Rechercher..." >
                 </div>
             </div>
-        </div>
-        <div class="col-xl-3">
-            <div class="form-group">
-                <label for="categorie_id">Recherche par cat&eacute;gorie</label>
-                <div class="input-group input-group-sm">
-                    <select class="form-control" id="searchByCategorie">
-                        <option value="0"> Toutes les cat&eacute;gories</option>
-                        @foreach($categories as $categorie)
-                        <option value="{{$categorie->id}}"> {{$categorie->libelle_categorie}}</option>
-                        @endforeach
-                    </select>
+            <div class="col-xl-3">
+                <div class="form-group">
+                    <label for="mode_id">Recherche par mode</label>
+                    <div class="input-group input-group-sm">
+                        <select class="form-control" id="searchByMode">
+                            <option value="0"> Tous les modes de cours</option>
+                            @foreach($modes as $mode)
+                            <option value="{{$mode->id}}"> {{$mode->libelle_mode}}</option>
+                            @endforeach
+                        </select>
+                    </div>
                 </div>
             </div>
-        </div>
-        <!--div class="col-xl-2">
-            <p class="text-right">
-                <a href="" class="btn btn-outline-success mr-4 text-right"><i class="la la-file-excel icon-lg"></i> Exporter</a>
-            </p>
-        </div-->
-    </div>
-    <div class="row">
-        <div class="col-xl-12">
-                <div class="bg-white rounded shadow-sm py-5 px-10 px-lg-20">
-                    <table id="table" class="table table-bordered table-hover table-checkable dataTable no-footer dtr-inline"
-                            data-pagination="true"
-                            data-search="false"
-                            data-toggle="table"
-                            data-url="{{ url('education', ['action' => 'liste-cours']) }}"
-                            data-unique-id="id"
-                            data-show-toggle="false"
-                            data-show-columns="true">
-                            <thead>
-                                <tr role="row">
-                                    <th data-field="libelle_cours" data-searchable="true" data-sortable="true">Titre</th>
-                                    <th data-field="categorie.libelle_categorie">Cat&eacute;gorie</th>
-                                    <th data-field="mode.libelle_mode">Mode</th>
-                                    <th data-field="duree">Dur&eacute;r</th>
-                                    <th data-field="prix" data-formatter="prixFormatter">Prix</th>
-                                    <th data-field="enseignant.name">Enseignant</th>
-                                    <th data-field="nombre_place" data-align="center">Place dsipo.</th>
-                                    <th data-field="dates_cours" data-visible="false">Date du cours</th>
-                                    <th data-formatter="publieFormatter" >Publi&eacute;</th>
-                                    <th data-formatter="vedetteFormatter" data-visible="false">En vedette</th>
-                                    <th data-field="id" data-formatter="optionFormatter" data-width="150px" data-align="center"><i class="ki ki-wrench"></i></th>
-                                </tr>
-                            </thead>
-                    </table>
+            <div class="col-xl-3">
+                <div class="form-group">
+                    <label for="categorie_id">Recherche par cat&eacute;gorie</label>
+                    <div class="input-group input-group-sm">
+                        <select class="form-control" id="searchByCategorie">
+                            <option value="0"> Toutes les cat&eacute;gories</option>
+                            @foreach($categories as $categorie)
+                            <option value="{{$categorie->id}}"> {{$categorie->libelle_categorie}}</option>
+                            @endforeach
+                        </select>
+                    </div>
                 </div>
+            </div>
+            <!--div class="col-xl-2">
+                <p class="text-right">
+                    <a href="" class="btn btn-outline-success mr-4 text-right"><i class="la la-file-excel icon-lg"></i> Exporter</a>
+                </p>
+            </div-->
         </div>
-    </div>
+        <div class="row">
+            <div class="col-xl-12">
+                    <div class="bg-white rounded shadow-sm py-5 px-10 px-lg-20">
+                        <table id="table" class="table table-bordered table-hover table-checkable dataTable no-footer dtr-inline"
+                                data-pagination="true"
+                                data-search="false"
+                                data-toggle="table"
+                                data-url="{{ url('education', ['action' => 'liste-cours']) }}"
+                                data-unique-id="id"
+                                data-show-toggle="false"
+                                data-show-columns="true">
+                                <thead>
+                                    <tr role="row">
+                                        <th data-field="libelle_cours" data-searchable="true" data-sortable="true">Titre</th>
+                                        <th data-field="categorie.libelle_categorie">Cat&eacute;gorie</th>
+                                        <th data-field="mode.libelle_mode">Mode</th>
+                                        <th data-field="duree">Dur&eacute;r</th>
+                                        <th data-field="prix" data-formatter="prixFormatter">Prix</th>
+                                        <th data-field="enseignant.name">Enseignant</th>
+                                        <th data-field="nombre_place" data-align="center">Place dsipo.</th>
+                                        <th data-field="dates_cours" data-visible="false">Date du cours</th>
+                                        <th data-formatter="publieFormatter" >Publi&eacute;</th>
+                                        <th data-formatter="vedetteFormatter" data-visible="false">En vedette</th>
+                                        <th data-field="id" data-formatter="optionFormatter" data-width="150px" data-align="center"><i class="ki ki-wrench"></i></th>
+                                    </tr>
+                                </thead>
+                        </table>
+                    </div>
+            </div>
+        </div>
     </div>
 </div>
 <!-- modal ajout et modification -->
@@ -146,14 +146,19 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Image descriptive</label>
                                         <input type="file" class="form-control" name="image_descriptive" id="image_descriptive">
                                     </div>
                                 </div>
-                               
-                                <div class="col-md-6">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>Vid&eacute;o descriptive (100 Mo maxi)</label>
+                                        <input type="file" class="form-control" name="video_descriptive" id="video_descriptive" >
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
                                     <div class="form-group">
                                         <label>Vid&eacute;o cours (Fichier zip ou rar)</label>
                                         <input type="file" class="form-control" name="video_cours" id="video_cours" accept="zip,application/octet-stream,application/zip,application/x-zip,application/x-zip-compressed">

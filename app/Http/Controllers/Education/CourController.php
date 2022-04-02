@@ -134,6 +134,28 @@ class CourController extends Controller
                     $imgSlider->save(storage_path('app/public/img/image_descriptive_slider/'.$file_name),60);
                     $cours->image_descriptive_slider = '/storage/img/image_descriptive_slider/'.$file_name;
                 }
+
+                if(isset($data['video_descriptive'])){
+                    $video = request()->file('video_descriptive');
+                    $file_extention = strtolower($video->getClientOriginalExtension());
+                    $allowedExtensions = array('mp4', 'mov', 'ogg', 'avi');
+
+                    //Convertir la taille du fichier en Mo
+                    $fileSize = number_format($video->getSize() / 1048576, 2);
+
+                    if (!in_array($file_extention, $allowedExtensions)) {
+                        return response()->json(["code" => 0, "msg" => "L'extension de votre fichier vidéo doit etre mp4, mov ou ogg", "data" => NULL]);
+                    }
+                    //La video ne doit pas depasser 55Mo
+                    if($fileSize > 100){
+                        return response()->json(["code" => 0, "msg" => "La taille de votre vidéo ne doit pas dépasser 100 Mo", "data" => NULL]);
+                    }
+
+                    $file_name = str::slug($data['libelle_cours']).'_'.date("dmYHis").'.'. $file_extention;
+
+                    $video->move(storage_path('app/public/video/video_descriptive/'),$file_name);
+                    $cours->video_descriptive = '/storage/video/video_descriptive/'.$file_name;
+                }
             
                 if(isset($data['video_cours'])){
                     $video = request()->file('video_cours');

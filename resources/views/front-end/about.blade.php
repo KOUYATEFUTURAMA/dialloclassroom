@@ -5,14 +5,14 @@
             <div class="container text-center">
                 <div class="row">
                     <div class="col-md-6">
-                        <h2 class=" text-left">Apropos de nous</h2>
+                        <h2 class=" text-left">A propos de nous</h2>
                     </div>
                     <div class="col-md-6">
                         <div class="breadcrumb text-right">
                             <a href="{{route('web.index')}}">
                                 <i class="ti-home"></i> Accueil
                             </a>
-                            <span>/ Apropos de nous</span>
+                            <span>/ A propos de nous</span>
                         </div>
                     </div>
                 </div>

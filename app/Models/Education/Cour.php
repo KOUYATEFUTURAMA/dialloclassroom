@@ -42,4 +42,9 @@ class Cour extends Model
     {
         return route('web.cours-details', [ 'slug' => Str::slug($this->libelle_cours), 'id' => $this->id ]);
     }
+
+    public function achatCour()
+    {
+        return route('web.achat-cour', [ 'slug' => Str::slug($this->libelle_cours), 'id' => $this->id ]);
+    }
 }
